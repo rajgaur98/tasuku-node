@@ -1,0 +1,36 @@
+{
+  "name": "tasuku-node",
+  "version": "1.0.0",
+  "description": "Tasuku is a task tracking app or a fancy to-do list ;)",
+  "main": "index.ts",
+  "author": "Rajkumar Gaur",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.ts",
+    "dev": "nodemon index.ts",
+    "build": "tsc --project ./",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.12",
+    "@types/graphql": "^14.5.0",
+    "@types/node": "^15.12.4",
+    "@typescript-eslint/eslint-plugin": "^4.27.0",
+    "@typescript-eslint/parser": "^4.27.0",
+    "eslint": "^7.29.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.3.1",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.4"
+  },
+  "dependencies": {
+    "apollo-server-express": "^2.25.1",
+    "date-fns": "^2.22.1",
+    "express": "^4.17.1",
+    "graphql": "^15.5.0",
+    "mongoose": "^5.12.15"
+  }
+}
