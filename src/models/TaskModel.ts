@@ -8,6 +8,7 @@ const TaskSchema = new mongoose.Schema({
   priority: String,
   dueDate: String,
   createdOn: String,
+  order: Number,
 });
 
 export default mongoose.model("Task", TaskSchema);

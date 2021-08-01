@@ -13,6 +13,7 @@ const TaskRoute = {
       status: String
       priority: String
       dueDate: String
+      order: Int
     ): [Task]
     updateTask(
       id: String
@@ -23,7 +24,9 @@ const TaskRoute = {
       priority: String
       dueDate: String
       createdOn: String
+      order: Int
     ): [Task]
+    updateTasks(tasks: [TaskInput]): [Task]
     deleteTask(id: String): [Task]
   `,
 
@@ -37,6 +40,18 @@ const TaskRoute = {
       priority: String
       dueDate: String
       createdOn: String
+      order: Int
+    }
+    input TaskInput {
+      id: String
+      sectionId: String
+      name: String
+      description: String
+      status: String
+      priority: String
+      dueDate: String
+      createdOn: String
+      order: Int
     }
   `,
 
@@ -49,6 +64,9 @@ const TaskRoute = {
   mutationResolvers: {
     updateTask: async (_: any, args: any) => {
       return await TaskController.updateTask(args);
+    },
+    updateTasks: async (_: any, args: any) => {
+      return await TaskController.updateTasks(args);
     },
     deleteTask: async (_: any, args: any) => {
       return await TaskController.deleteTask(args);

@@ -29,10 +29,10 @@ const SectionRoute = {
     updateSection: async (_: any, args: any) => {
       return await SectionController.updateSection(args);
     },
-    deleteTask: async (_: any, args: any) => {
+    deleteSection: async (_: any, args: any) => {
       return await SectionController.deleteSection(args);
     },
-    createTask: async (_: any, args: any) => {
+    createSection: async (_: any, args: any) => {
       return await SectionController.createSection(args);
     },
   },

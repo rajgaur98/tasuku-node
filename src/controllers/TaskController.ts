@@ -13,6 +13,10 @@ class TaskController {
     await TaskService.updateTask(args);
   };
 
+  static updateTasks = async (args: any) => {
+    await TaskService.updateTasks(args);
+  };
+
   static deleteTask = async (args: any) => {
     await TaskService.deleteTask(args);
   };

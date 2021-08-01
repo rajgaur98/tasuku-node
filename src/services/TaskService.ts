@@ -23,6 +23,7 @@ class TaskService {
         description: args.description,
         status: args.status,
         priority: args.priority,
+        order: args.order,
         dueDate: args.dueDate,
         createdOn: format(new Date(), "MM/dd/yyyy"),
       });
@@ -41,10 +42,26 @@ class TaskService {
           description: args.description,
           status: args.status,
           priority: args.priority,
+          order: args.order,
           dueDate: args.dueDate,
           createdOn: args.createdOn,
         }
       );
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  static updateTasks = async (args: any) => {
+    try {
+      for (let i = 0; i < args.tasks.length; i += 1) {
+        const task = args.tasks[i];
+        if (!task.id) {
+          await TaskService.createTask(task);
+        } else {
+          await TaskService.updateTask(task);
+        }
+      }
     } catch (err) {
       console.log(err);
     }
